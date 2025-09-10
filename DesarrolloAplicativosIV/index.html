@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio - Miguel Angel Cruz Q.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    html { scroll-behavior: smooth; }
+    /* pequeño ajuste para que el contenedor virtual no genere scroll inesperado */
+    body, #app { height: 100%; }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-200 font-mono">
+
+  <div id="app" class="flex min-h-screen">
+
+    <!-- SIDEBAR (estilo gestor) -->
+    <aside class="w-64 bg-gray-800 border-r border-gray-700 p-4 sticky top-0 h-screen overflow-auto">
+      <header class="mb-6">
+        <h2 class="font-bold text-lg">📂 Mis Proyectos</h2>
+        <p class="text-sm text-gray-400">Estructura tipo IDE</p>
+      </header>
+
+      <nav class="text-sm sm:text-base text-gray-300 space-y-3">
+        <!-- Carpetas / proyectos ficticios -->
+        <div class="space-y-1 mb-3">
+          <div class="flex items-center gap-2"><span>📁</span><span>Proyecto1</span></div>
+          <div class="flex items-center gap-2"><span>📁</span><span>Proyecto2</span></div>
+          <div class="flex items-center gap-2"><span>📁</span><span>Portfolio</span></div>
+        </div>
+
+        <!-- Unidades y semanas (links a secciones) -->
+        <div>
+          <details open class="mb-2">
+            <summary class="cursor-pointer">📂 Unidad 1</summary>
+            <ul class="ml-4 mt-1 space-y-1">
+              <li><a href="#semana1" class="hover:text-white">📄 Semana 1</a></li>
+              <li><a href="#semana2" class="hover:text-white">📄 Semana 2</a></li>
+              <li><a href="#semana3" class="hover:text-white">📄 Semana 3</a></li>
+            </ul>
+          </details>
+
+          <details class="mb-2">
+            <summary class="cursor-pointer">📂 Unidad 2</summary>
+            <ul class="ml-4 mt-1 space-y-1">
+              <li><a href="#semana1" class="hover:text-white">📄 Semana 1</a></li>
+              <li><a href="#semana2" class="hover:text-white">📄 Semana 2</a></li>
+              <li><a href="#semana3" class="hover:text-white">📄 Semana 3</a></li>
+            </ul>
+          </details>
+
+          <details class="mb-2">
+            <summary class="cursor-pointer">📂 Unidad 3</summary>
+            <ul class="ml-4 mt-1 space-y-1">
+              <li><a href="#semana1" class="hover:text-white">📄 Semana 1</a></li>
+              <li><a href="#semana2" class="hover:text-white">📄 Semana 2</a></li>
+              <li><a href="#semana3" class="hover:text-white">📄 Semana 3</a></li>
+            </ul>
+          </details>
+
+          <details class="mb-2">
+            <summary class="cursor-pointer">📂 Unidad 4</summary>
+            <ul class="ml-4 mt-1 space-y-1">
+              <li><a href="#semana1" class="hover:text-white">📄 Semana 1</a></li>
+              <li><a href="#semana2" class="hover:text-white">📄 Semana 2</a></li>
+              <li><a href="#semana3" class="hover:text-white">📄 Semana 3</a></li>
+            </ul>
+          </details>
+        </div>
+      </nav>
+
+      <footer class="mt-6 text-xs text-gray-500">
+        <p>UI estilo NetBeans / VSCode</p>
+      </footer>
+    </aside>
+
+    <!-- MAIN (contenido: header, hero y secciones) -->
+    <main class="flex-1 overflow-auto">
+
+      <!-- HEADER (tipo IDE bar) -->
+      <header class="bg-gray-800 p-4 flex justify-between items-center border-b border-gray-700">
+        <div class="flex items-center gap-3">
+          <span class="font-semibold">UPLA</span>
+          <span class="text-sm text-gray-400">— Desarrollo de aplicativos</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/tuUsuario" target="_blank" class="bg-green-600 px-3 py-1 rounded text-sm hover:bg-green-700">GitHub</a>
+        </div>
+      </header>
+
+      <!-- HERO: split texto (izq) / imagen (der) -->
+      <section class="min-h-screen flex md:flex-row flex-col">
+        <!-- Texto izquierda -->
+        <div class="md:w-1/2 w-full flex items-center p-8 md:p-16 bg-gray-900">
+          <div>
+            <h1 class="text-3xl md:text-5xl xl:text-6xl font-bold mb-3">Desarrollo de aplicativos</h1>
+            <p class="text-base md:text-lg xl:text-xl text-gray-400 mb-6">Miguel Ángel Cruz Q.</p>
+
+            <div class="space-y-2">
+              <a href="https://github.com/tuUsuario" target="_blank" class="inline-block text-blue-400 hover:underline">🌐 github.com/tuUsuario</a>
+              <p class="text-sm text-gray-500 mt-1">Ingeniería de Sistemas | UPLA</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Imagen derecha (ocupa toda la mitad derecha, de esquina a esquina) -->
+        <div class="md:w-1/2 w-full h-64 md:h-auto">
+          <img src="img/Codigo img.png" alt="Imagen ejemplo" class="w-full h-full object-cover" />
+        </div>
+      </section>
+
+      <!-- --- SECCIONES (semana 1, 2, 3) --- -->
+
+      <!-- Semana 1 -->
+      <section id="semana1" class="min-h-screen p-8 md:p-10 border-b border-gray-800">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">Semana 1 - Desarrollo GUI con swing</h2>
+
+          <!-- 3 bloques de código (responsive font + scroll si es necesario) -->
+          <pre  class="bg-gray-800 p-4 rounded mb-4 text-sm sm:text-base md:text-lg text-green-300 overflow-auto">
+public void saludo() {
+    System.out.println("Aquí encontrarás mis investigaciones organizadas por semanas y unidades );
+}   System.out.println("además de enlaces a mis proyectos y perfil de GitHub.");
+          </pre>
+
+          <pre class="bg-gray-800 p-4 rounded mb-4 text-sm sm:text-base md:text-lg text-green-300 overflow-auto">
+/* Ejemplo de pseudocódigo de la clase:
+ - Definir objetivo de la semana
+ - Identificar tareas
+ - Priorizar
+*/
+          </pre>
+
+          <pre class="bg-gray-800 p-4 rounded mb-4 text-sm sm:text-base md:text-lg text-green-300 overflow-auto">
+/* Notas:
+ - Técnica Pomodoro
+ - Registro de tiempos
+ - Evaluación semanal
+*/
+          </pre>
+          <h3>//Enlace a repositorio y descarga de archivos</h3>
+         <p class="mt-3 text-lg"> <!-- aquí cambié text-sm por text-lg -->
+  🔗 <a href="#" class="text-blue-400 hover:underline text-xl">Repositorio GitHub (Semana 1)</a> |
+  📄 <a href="#" class="text-green-400 hover:underline text-xl">Descargar Documento (Semana 1)</a>
+</p>
+        </div>
+      </section>
+
+      <!-- Semana 2 -->
+      <section id="semana2" class="min-h-screen p-8 md:p-10 border-b border-gray-800">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">Semana 2 - Métodos con GUI</h2>
+
+          <pre class="bg-gray-800 p-4 rounded mb-4 text-sm sm:text-base md:text-lg text-green-300 overflow-auto">
+public class ScrumNotes {
+    // Roles: Product Owner, Scrum Master, Dev Team
+    // Eventos: Sprint, Daily, Review, Retrospectiva
+}
+          </pre>
+
+          <pre class="bg-gray-800 p-4 rounded mb-4 text-sm sm:text-base md:text-lg text-green-300 overflow-auto">
+// Ejemplo: Backlog grooming, estimación con planning poker
+          </pre>
+
+          <pre class="bg-gray-800 p-4 rounded mb-4 text-sm sm:text-base md:text-lg text-green-300 overflow-auto">
+// Resultado esperado: backlog priorizado y sprint planning definido
+          </pre>
+<h3>//Enlace a repositorio y descarga de archivos</h3>
+          <p class="mt-3 text-lg"> <!-- aquí cambié text-sm por text-lg -->
+  🔗 <a href="#" class="text-blue-400 hover:underline text-xl">Repositorio GitHub (Semana 2)</a> |
+  📄 <a href="#" class="text-green-400 hover:underline text-xl">Descargar Documento (Semana 2)</a>
+</p>
+        </div>
+      </section>
+
+      <!-- Semana 3 -->
+      <section id="semana3" class="min-h-screen p-8 md:p-10 border-b border-gray-800">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">Semana 3 - Clases con GUI</h2>
+
+          <pre class="bg-gray-800 p-4 rounded mb-4 text-sm sm:text-base md:text-lg text-green-300 overflow-auto">
+// Resumen: Popper y la falsabilidad como criterio de cientificidad
+          </pre>
+
+          <pre class="bg-gray-800 p-4 rounded mb-4 text-sm sm:text-base md:text-lg text-green-300 overflow-auto">
+// Actividad: analizar si la astrología cumple criterios científicos
+          </pre>
+
+          <pre class="bg-gray-800 p-4 rounded mb-4 text-sm sm:text-base md:text-lg text-green-300 overflow-auto">
+// Conclusión: herramientas para evaluación crítica de teorías
+          </pre>
+<h3>//Enlace a repositorio y descarga de archivos</h3>
+         <p class="mt-3 text-lg"> <!-- aquí cambié text-sm por text-lg -->
+  🔗 <a href="#" class="text-blue-400 hover:underline text-xl">Repositorio GitHub (Semana 3)</a> |
+  📄 <a href="#" class="text-green-400 hover:underline text-xl">Descargar Documento (Semana 3)</a>
+</p>
+        </div>
+      </section>
+
+      <!-- Contacto + Disclaimer -->
+      <section class="min-h-[50vh] p-8 md:p-10 bg-gray-800">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">Información de Contacto</h2>
+          <p class="mb-2">📧 Correo institucional: <span class="text-gray-200">T01280J@ms.upla.edu.pe</span></p>
+          <p class="mb-2">📧 Correo personal: <span class="text-gray-200">minecol127@gmail.com</span></p>
+          <p class="mb-2">🌐 GitHub: <a href="https://github.com/tuUsuario" target="_blank" class="text-blue-400 hover:underline">github.com/tuUsuario</a></p>
+
+          <p class="text-gray-400 mt-6">
+            Disclaimer: Este portfolio es una simulación estilo gestor de código, creado con fines académicos.
+          </p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script src="animations.js"></script>
+</body>
+</html>
