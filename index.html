@@ -8,15 +8,17 @@
   
   <style>
     html { scroll-behavior: smooth; }
-    /* pequeño ajuste para que el contenedor virtual no genere scroll inesperado */
     body, #app { height: 100%; }
   </style>
 </head>
 <body class="bg-gray-900 text-gray-200 font-mono">
+  <!-- Partículas fondo -->
+  <canvas id="particles" class="fixed inset-0 -z-10"></canvas>
 
-  <div id="app" class="flex min-h-screen">
-
-    <!-- SIDEBAR (estilo gestor) -->
+  <!-- CONTENEDOR PRINCIPAL -->
+  <div id="app" class="flex flex-row min-h-screen">
+    
+    <!-- SIDEBAR -->
     <aside class="w-64 bg-gray-800 border-r border-gray-700 p-4 sticky top-0 h-screen overflow-auto">
       <header class="mb-6">
         <h2 class="font-bold text-lg">📂 Mis Proyectos</h2>
@@ -24,14 +26,14 @@
       </header>
 
       <nav class="text-sm sm:text-base text-gray-300 space-y-3">
-        <!-- Carpetas / proyectos ficticios -->
+        <!-- Carpetas ficticias -->
         <div class="space-y-1 mb-3">
           <div class="flex items-center gap-2"><span>📁</span><span>Proyecto1</span></div>
           <div class="flex items-center gap-2"><span>📁</span><span>Proyecto2</span></div>
           <div class="flex items-center gap-2"><span>📁</span><span>Portfolio</span></div>
         </div>
 
-        <!-- Unidades y semanas (links a secciones) -->
+        <!-- Unidades -->
         <div>
           <details open class="mb-2">
             <summary class="cursor-pointer">📂 Unidad 1</summary>
@@ -75,11 +77,11 @@
         <p>UI estilo NetBeans / VSCode</p>
       </footer>
     </aside>
-
-    <!-- MAIN (contenido: header, hero y secciones) -->
+   
+    <!-- MAIN -->
     <main class="flex-1 overflow-auto">
 
-      <!-- HEADER (tipo IDE bar) -->
+      <!-- HEADER -->
       <header class="bg-gray-800 p-4 flex justify-between items-center border-b border-gray-700">
         <div class="flex items-center gap-3">
           <span class="font-semibold">UPLA</span>
@@ -90,61 +92,83 @@
         </div>
       </header>
 
-      <!-- HERO: split texto (izq) / imagen (der) -->
+      <!-- HERO -->
       <section class="min-h-screen flex md:flex-row flex-col">
         <!-- Texto izquierda -->
         <div class="md:w-1/2 w-full flex items-center p-8 md:p-16 bg-gray-900">
           <div>
             <h1 class="text-3xl md:text-5xl xl:text-6xl font-bold mb-3">Desarrollo de aplicativos</h1>
             <p class="text-base md:text-lg xl:text-xl text-gray-400 mb-6">Miguel Ángel Cruz Q.</p>
-
+             <pre class="bg-gray-800 p-4 rounded mb-4 text-sm sm:text-base md:text-lg text-green-300 overflow-auto">
+public class PORTAFOLIODDA {
+    public static void main(String[] args) {
+        System.out.println("Portafolio personal -UPLA");
+        System.out.println("Ingeniería de sistemas ");
+        System.out.println("IV CICLO -2025")
+    }
+}
+          </pre>
             <div class="space-y-2">
               <a href="https://github.com/tuUsuario" target="_blank" class="inline-block text-blue-400 hover:underline">🌐 github.com/tuUsuario</a>
               <p class="text-sm text-gray-500 mt-1">Ingeniería de Sistemas | UPLA</p>
             </div>
           </div>
         </div>
+<canvas id="particlesHero" class="absolute inset-0 -z-5 pointer-events-none"></canvas>
+        <!-- Fondo glitch -->
+        <div class="glitch-bg fixed inset-0 -z-10"></div>
 
-        <!-- Imagen derecha (ocupa toda la mitad derecha, de esquina a esquina) -->
-        <div class="md:w-1/2 w-full h-64 md:h-auto">
+        <!-- Imagen derecha con degradados -->
+        <div class="md:w-1/2 w-full h-64 md:h-auto relative">
           <img src="img/Codigo img.png" alt="Imagen ejemplo" class="w-full h-full object-cover" />
+          <!-- Degradado izquierda -->
+          <div class="absolute inset-0 bg-gradient-to-r from-gray-900/70 via-transparent to-transparent"></div>
+          <!-- Degradado abajo -->
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-transparent to-transparent"></div>
         </div>
       </section>
-
-      <!-- --- SECCIONES (semana 1, 2, 3) --- -->
 
       <!-- Semana 1 -->
       <section id="semana1" class="min-h-screen p-8 md:p-10 border-b border-gray-800">
         <div class="max-w-5xl mx-auto">
           <h2 class="text-2xl md:text-3xl font-bold mb-4">Semana 1 - Desarrollo GUI con swing</h2>
 
-          <!-- 3 bloques de código (responsive font + scroll si es necesario) -->
-          <pre  class="bg-gray-800 p-4 rounded mb-4 text-sm sm:text-base md:text-lg text-green-300 overflow-auto">
-public void saludo() {
-    System.out.println("Aquí encontrarás mis investigaciones organizadas por semanas y unidades );
-}   System.out.println("además de enlaces a mis proyectos y perfil de GitHub.");
+          <pre class="bg-gray-800 p-4 rounded mb-4 text-sm sm:text-base md:text-lg text-green-300 overflow-auto">
+public class EjerciciosGUI {
+    public static void main(String[] args) {
+        System.out.println("1. Aplicación de venta de camisetas con descuento doble de verano.");
+        System.out.println("2. Aplicación para calcular presupuesto de feria (publicidad, logística, etc.)");
+        System.out.println("   según porcentaje asignado a cada apartado.");
+    }
+}
           </pre>
 
           <pre class="bg-gray-800 p-4 rounded mb-4 text-sm sm:text-base md:text-lg text-green-300 overflow-auto">
-/* Ejemplo de pseudocódigo de la clase:
- - Definir objetivo de la semana
- - Identificar tareas
- - Priorizar
-*/
+public class ManualGitHub {
+    public static void main(String[] args) {
+        System.out.println("1. Crear una cuenta en GitHub.");
+        System.out.println("2. Crear un repositorio nuevo.");
+        System.out.println("3. Subir archivos (index.html, css, imágenes).");
+        System.out.println("4. Publicar página en GitHub Pages.");
+    }
+}
           </pre>
 
           <pre class="bg-gray-800 p-4 rounded mb-4 text-sm sm:text-base md:text-lg text-green-300 overflow-auto">
-/* Notas:
- - Técnica Pomodoro
- - Registro de tiempos
- - Evaluación semanal
-*/
+public class GitConcepto {
+    public static void main(String[] args) {
+        System.out.println("Git es un sistema de control de versiones distribuido.");
+        System.out.println("Permite llevar historial de cambios, trabajar en ramas,");
+        System.out.println("y colaborar en proyectos de software.");
+    }
+}
           </pre>
+
           <h3>//Enlace a repositorio y descarga de archivos</h3>
-         <p class="mt-3 text-lg"> <!-- aquí cambié text-sm por text-lg -->
-  🔗 <a href="#" class="text-blue-400 hover:underline text-xl">Repositorio GitHub (Semana 1)</a> |
-  📄 <a href="#" class="text-green-400 hover:underline text-xl">Descargar Documento (Semana 1)</a>
-</p>
+          <p class="mt-3 text-lg">
+            🔗 <a href="#" class="text-blue-400 hover:underline text-xl">Repositorio GitHub (Semana 1)</a> |
+            📄 <a href="#" class="text-green-400 hover:underline text-xl">Descargar Documento (Semana 1)</a>
+          </p>
         </div>
       </section>
 
@@ -167,11 +191,12 @@ public class ScrumNotes {
           <pre class="bg-gray-800 p-4 rounded mb-4 text-sm sm:text-base md:text-lg text-green-300 overflow-auto">
 // Resultado esperado: backlog priorizado y sprint planning definido
           </pre>
-<h3>//Enlace a repositorio y descarga de archivos</h3>
-          <p class="mt-3 text-lg"> <!-- aquí cambié text-sm por text-lg -->
-  🔗 <a href="#" class="text-blue-400 hover:underline text-xl">Repositorio GitHub (Semana 2)</a> |
-  📄 <a href="#" class="text-green-400 hover:underline text-xl">Descargar Documento (Semana 2)</a>
-</p>
+
+          <h3>//Enlace a repositorio y descarga de archivos</h3>
+          <p class="mt-3 text-lg">
+            🔗 <a href="#" class="text-blue-400 hover:underline text-xl">Repositorio GitHub (Semana 2)</a> |
+            📄 <a href="#" class="text-green-400 hover:underline text-xl">Descargar Documento (Semana 2)</a>
+          </p>
         </div>
       </section>
 
@@ -191,15 +216,16 @@ public class ScrumNotes {
           <pre class="bg-gray-800 p-4 rounded mb-4 text-sm sm:text-base md:text-lg text-green-300 overflow-auto">
 // Conclusión: herramientas para evaluación crítica de teorías
           </pre>
-<h3>//Enlace a repositorio y descarga de archivos</h3>
-         <p class="mt-3 text-lg"> <!-- aquí cambié text-sm por text-lg -->
-  🔗 <a href="#" class="text-blue-400 hover:underline text-xl">Repositorio GitHub (Semana 3)</a> |
-  📄 <a href="#" class="text-green-400 hover:underline text-xl">Descargar Documento (Semana 3)</a>
-</p>
+
+          <h3>//Enlace a repositorio y descarga de archivos</h3>
+          <p class="mt-3 text-lg">
+            🔗 <a href="#" class="text-blue-400 hover:underline text-xl">Repositorio GitHub (Semana 3)</a> |
+            📄 <a href="#" class="text-green-400 hover:underline text-xl">Descargar Documento (Semana 3)</a>
+          </p>
         </div>
       </section>
 
-      <!-- Contacto + Disclaimer -->
+      <!-- Contacto -->
       <section class="min-h-[50vh] p-8 md:p-10 bg-gray-800">
         <div class="max-w-5xl mx-auto">
           <h2 class="text-2xl md:text-3xl font-bold mb-4">Información de Contacto</h2>
@@ -215,7 +241,10 @@ public class ScrumNotes {
 
     </main>
   </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-<script src="animations.js"></script>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="animations.js"></script>
 </body>
 </html>
